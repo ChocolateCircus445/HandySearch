@@ -11,7 +11,7 @@ Bookmark.prototype.toString = function() {
 var loadBookmarks = function() {
   var bookmarkLS = localStorage.getItem("handySearch-bookmarkCode");
   if (bookmarkLS == undefined || bookmarkLS == "") {
-    localStorage.setItem("handySearch-bookmarkCode", "<td class=\"bookmark\" style=\"text-align: center;\">\n<span>+</span>\n</td>");
+    localStorage.setItem("handySearch-bookmarkCode", "<td class=\"bookmark\" style=\"text-align: center;\" onclick=\"location.assign('actions_bookmarks.html')\">\n<span>+</span>\n</td>");
     bookmarkLS = localStorage.getItem("handySearch-bookmarkCode");
   }
   if (localStorage.getItem("handySearch-bookmarks") == undefined || localStorage.getItem("handySearch-bookmarks") == "") {
@@ -23,12 +23,14 @@ var loadBookmarks = function() {
     var newBM = new Bookmark(untainted.url, untainted.name);
     allBookmarks[i] = newBM;
   }
-  document.getElementById("bookmarkPlace").innerHTML = bookmarkLS;
-
+  let splitty = location.href.split("/")
+  if (splitty[splitty.length - 1] == "index.html") {
+    document.getElementById("bookmarkPlace").innerHTML = bookmarkLS;
+  }
 }
 
 var saveBookmarks = function() {
-  var totalBookmarkCode = "<td class=\"bookmark\" style=\"text-align: center;\">\n<span>+</span>\n</td>\n";
+  var totalBookmarkCode = "<td class=\"bookmark\" style=\"text-align: center;\" onclick=\"location.assign('actions_bookmarks.html')\">\n<span>+</span>\n</td>\n";
   for (var i = 0; i < allBookmarks.length; i++) {
     totalBookmarkCode += allBookmarks[i].html + "\n";
   }
@@ -48,6 +50,3 @@ var setWidthOfBookmarks = function() {
     bookmarks[i].style.width = lengthPercent + "%";
   }
 }
-
-loadBookmarks();
-setWidthOfBookmarks();

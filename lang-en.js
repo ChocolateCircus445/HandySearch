@@ -35,5 +35,8 @@ var en = {
   protectsPrivacy: "Protects privacy",
   notProtectsPrivacy: "Does not protect privacy",
   featuresPlanned: "Features Planned",
+  addBM: "Add a bookmark",
+  noInternet: "No internet",
+  mitLicense: ""
 }
 langs.en = "en";

@@ -16,7 +16,7 @@ MenuItem.prototype.apply = function() {
 //Menu items
 menuItems = [
 new MenuItem("about", "actions_about.html"),
-/*new MenuItem("bookmarks", "actions_bookmarks.html"),*/
+new MenuItem("bookmarks", "actions_bookmarks.html"),
 new MenuItem("settingsGear", "settings.html"),
 new MenuItem("featuresPlanned", "action_featuresplanned.html"),
 ];

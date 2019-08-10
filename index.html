@@ -41,5 +41,16 @@
 </body>
 <script src="background.js"></script>
 <script src="bookmarks.js"></script>
+<script>
+loadBookmarks();
+setWidthOfBookmarks();
+setInterval(function() {
+  if (!navigator.onLine) {
+    document.getElementById("notOnline").setAttribute("style", "display: block;font-family: MPLUS;color: #fb2a2a;");
+  } else {
+    document.getElementById("notOnline").setAttribute("style", "display: none;font-family: MPLUS;color: #fb2a2a;");
+  }
+}, 1000)
+</script>
 <script src="menu.js"></script>
 </html>

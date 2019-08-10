@@ -44,7 +44,7 @@ var ClockDef = function(langFile) {
   this.dateFormat = this.dateFormat.replaceAll("%d", "<span id=\"day\"></span>");
   this.dateFormat = this.dateFormat.replaceAll("%l", "<span id=\"month\"></span>");
   this.dateFormat = this.dateFormat.replaceAll("%y", "<span id=\"year\"></span>");
-  this.html += this.dateFormat + "</p></div>";
+  this.html += this.dateFormat + "</p><p id=\"notOnline\" style=\"display: none; font-family: MPLUS;\">No internet</p></div>";
 }
 
 ClockDef.prototype.apply = function() {

@@ -1,0 +1,49 @@
+<html>
+<head>
+  <link href="fonts.css" rel="stylesheet">
+  <link href="settings.css" rel="stylesheet">
+  <script src="lnvars.js"></script>
+  <script src="lang-en.js"></script>
+  <script src="lang-es.js"></script>
+  <script src="lang-ja.js"></script>
+  <script src="vars.js"></script>
+  <script src="bookmarks.js"></script>
+  <script src="bookmarkRepresentation.js"></script>
+  <style>
+  #addedBookmarks {
+    border-style: solid;
+    width: 50%;
+  }
+  div.bookmarkRep {
+    border-style: dashed;
+    background-color: white;
+  }
+  </style>
+</head>
+<body style="font-family: MPLUS; background-size: 100%;">
+  <div id="saveButton" onclick="saveBMSettings()">Save</div>
+  <h1 id="bookmarkText">Bookmarks</h1>
+  <div id="addedBookmarks">
+
+  </div>
+  <button id="addBookmark" onclick="addBookmark()">Add a bookmark</button>
+  <script src="background.js"></script>
+  <script>
+  loadBookmarks();
+  var bkm = [];
+  function putBookmarks() {
+    document.getElementById("addedBookmarks").innerHTML = ""
+    for (let i = 0; i < allBookmarks.length; i++) {
+      bkm.push(allBookmarks[i]);
+      var bm = createBookmark(allBookmarks[i], i);
+      document.getElementById("addedBookmarks").innerHTML += bm;
+    }
+  }
+  putBookmarks();
+  document.getElementById("bookmarkText").innerHTML = strings.bookmarks ? strings.bookmarks : "Bookmarks";
+  document.getElementById("saveButton").innerHTML = strings.save ? strings.save : "Save";
+  document.getElementById("addBookmark").innerHTML = strings.addBM ? strings.addBM : "Add a bookmark";
+  eval("backgrounds." + localStorage.getItem("handySearch-background") + ".apply()");
+  </script>
+</body>
+</html>
