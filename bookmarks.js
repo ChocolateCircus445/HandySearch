@@ -51,6 +51,7 @@ var setWidthOfBookmarks = function() {
   }
 }
 
+/*
 let splitty = location.href.split("/")
 if (splitty[splitty.length - 1] == "actions_bookmarks.html") {
   let params = splitty[splitty.length - 1].split("?");
@@ -60,3 +61,4 @@ if (splitty[splitty.length - 1] == "actions_bookmarks.html") {
   allBookmarks.push(new Bookmark(url, title));
   alert(title + " was successfully added as a bookmark!");
 }
+*/
