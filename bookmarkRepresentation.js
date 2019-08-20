@@ -30,11 +30,26 @@ var addBookmark = function() {
     alert(strings.bmUrlErr ? strings.bmUrlErr : "Error: No url present");
     return;
   }
+  addBookmarkDW(url, name);
+}
+
+var addBookmarkDW = function(url, name) {
   let nbm = new Bookmark(url, name);
   bkm.push(nbm);
   allBookmarks = bkm;
   bkm = [];
   putBookmarks();
+}
+
+var getPendingBookmarks = function() {
+  var recruits = eval("[" + localStorage.getItem("handySearch-pendingBookmarks") + "]");
+  for (let i of recruits) {
+    addBookmarkDW(i.url, i.name);
+  }
+  localStorage.setItem("handySearch-pendingBookmarks", "");
+  alert("The page must be reloaded to save changes.");
+  saveBookmarks();
+  location.reload();
 }
 
 var deleteBookmark = function(index) {

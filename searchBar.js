@@ -33,7 +33,7 @@ var searchInternet = function() {
     } else if (searchBar.value.substring(0, 3) == "#r,") {
         //Sub[r]eddit
         //#r,[subreddit (no "r/")]
-        location.assign("http://reddit.com/r/" + searchBar.value.substring(3, searchBar.value.length));
+        location.assign("http://reddit.com/r/" + searchBar.value.substring(3, searchBar.value.length) + "?src=handysearch");
       } else if (searchBar.value.substring(0, 3) == "#t,") {
         //[T]witter hashtag
         //#t,[hashtag (without hash mark)]

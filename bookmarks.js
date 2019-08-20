@@ -50,3 +50,13 @@ var setWidthOfBookmarks = function() {
     bookmarks[i].style.width = lengthPercent + "%";
   }
 }
+
+let splitty = location.href.split("/")
+if (splitty[splitty.length - 1] == "actions_bookmarks.html") {
+  let params = splitty[splitty.length - 1].split("?");
+  params.shift();
+  let title = params[0].split("=")[1];
+  let url = params[1].split("=")[1];
+  allBookmarks.push(new Bookmark(url, title));
+  alert(title + " was successfully added as a bookmark!");
+}

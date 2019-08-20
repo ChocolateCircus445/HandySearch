@@ -27,6 +27,20 @@
 
   </div>
   <button id="addBookmark" onclick="addBookmark()">Add a bookmark</button>
+  <button id="getPendingBookmarks" onclick="getPendingBookmarks()" style="display: none;">Get pending bookmarks</button>
+  <script>
+  if (!localStorage.getItem("handySearch-pendingBookmarks") == "") {
+    document.getElementById("getPendingBookmarks").style.display = auto;
+  }
+  </script>
+  <div style="display: none;">
+    <div id="new-data-in">false</div>
+    <div id="new-data-out">false</div>
+    <div id="ext-data-in"></div>
+    <div id="ext-data-out"></div>
+    <div id="ext-function-out"></div>
+    <div id="ext-function-in"></div>
+  </div>
   <script src="background.js"></script>
   <script>
   loadBookmarks();
