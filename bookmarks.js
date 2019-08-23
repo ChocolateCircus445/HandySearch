@@ -24,7 +24,7 @@ var loadBookmarks = function() {
     allBookmarks[i] = newBM;
   }
   let splitty = location.href.split("/")
-  if (splitty[splitty.length - 1] == "index.html") {
+  if (splitty[splitty.length - 1] == "index.html" || location.href == "https://chocolatecircus445.github.io/HandySearch/") {
     document.getElementById("bookmarkPlace").innerHTML = bookmarkLS;
   }
 }
