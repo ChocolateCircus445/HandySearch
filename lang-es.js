@@ -35,7 +35,7 @@ var es = {
   protectsPrivacy: "Proteger la privacidad",
   notProtectsPrivacy: "No proteger la privacidad",
   featuresPlanned: "Features Planned",
-  addBM: "A\u00f1adir una marcadora de libra",
+  addBM: "A\u00f1adir un marcador de libro",
   noInternet: "No internet",
 }
 langs.es = "es";
