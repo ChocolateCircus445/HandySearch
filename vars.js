@@ -44,6 +44,7 @@ var searchEngines = {
   searx: new SearchEngine("Searx", "searx", "https://searx.me/?q=", true),
   biglobe: new SearchEngine("\u30d3\u30c3\u30b0\u30ed\u30fc\u30d6", "biglobe", "https://cgi.search.biglobe.ne.jp/cgi-bin/search2-b?search=検索&q=", false),
   gigablast: new SearchEngine("Gigablast", "gigablast", "https://www.gigablast.com/search?q=", true),
+  swagbucks: new SearchEngine("SwagBucks", "swagbucks", "https://www.swagbucks.com/?q=", false)
 }
 var searchEngine = localStorage.getItem("handySearch-searchEngine")
 if (!localStorage.getItem("handySearch-searchEngine")) {
